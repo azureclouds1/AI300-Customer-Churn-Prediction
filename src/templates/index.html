@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict Customer Churn</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <div>
+        <h1>Predict Customer Churn</h1>
+        <form method="POST">
+
+            <label for="tenure_months">Tenure Months:</label><br>
+            <input type="text" id="tenure_months" name="tenure_months" value="12"><br><br>
+
+            <label for="num_referrals">Number of Referrals:</label><br>
+            <select name="num_referrals" id="num_referrals">
+                <option value="0">0</option>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6 or more</option>
+            </select><br><br>
+
+            <label for="total_long_distance_fee">Total Long Distance Fee:</label><br>
+            <input type="text" id="total_long_distance_fee" name="total_long_distance_fee" value="0"><br><br>
+
+            <label for="total_monthly_fee">Total Monthly Fee:</label><br>
+            <input type="text" id="total_monthly_fee" name="total_monthly_fee" value="0"><br><br>
+
+            <label for="total_charges_quarter">Total Charges Quarter:</label><br>
+            <input type="text" id="total_charges_quarter" name="total_charges_quarter" value="0"><br><br>
+
+            <label for="age">Age:</label><br>
+            <input type="text" id="age" name="age" value="0"><br><br>
+
+            <label for="num_dependents">Number of Dependents:</label><br>
+            <select name="num_dependents" id="num_dependents">
+                <option value="0">0</option>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4 or more</option>
+            </select><br><br>
+
+            <label for="has_internet_service">Has Internet Service:</label><br>
+            <select name="has_internet_service" id="has_internet_service">
+            <option value="1" selected>Yes</option>
+            <option value="0">No</option>
+            </select><br><br>
+
+            <label for="has_unlimited_data">Has Unlimited Data:</label><br>
+            <select name="has_unlimited_data" id="has_unlimited_data">
+            <option value="1" selected>Yes</option>
+            <option value="0">No</option>
+            </select><br><br>
+
+            <label for="has_premium_tech_support">Has Premium Tech Support:</label><br>
+            <select name="has_premium_tech_support" id="has_premium_tech_support">
+            <option value="1" selected>Yes</option>
+            <option value="0">No</option>
+            </select><br><br>
+
+            <label for="has_online_security">Has Online Security:</label><br>
+            <select name="has_online_security" id="has_online_security">
+            <option value="1" selected>Yes</option>
+            <option value="0">No</option>
+            </select><br><br>
+
+            <label for="paperless_billing">Paperless Billing:</label><br>
+            <select name="paperless_billing" id="paperless_billing">
+            <option value="1" selected>Yes</option>
+            <option value="0">No</option>
+            </select><br><br>
+
+            <label for="senior_citizen">Senior Citizen:</label><br>
+            <select name="senior_citizen" id="senior_citizen">
+            <option value="1" selected>Yes</option>
+            <option value="0">No</option>
+            </select><br><br>
+
+            <label for="married">Married:</label><br>
+            <select name="married" id="married">
+            <option value="1" selected>Yes</option>
+            <option value="0">No</option>
+            </select><br><br>
+
+            <label for="contract_type">Contract Type:</label><br>
+            <select name="contract_type" id="contract_type">
+                <option value="0">Month to Month</option>
+                <option value="1" selected>One Year</option>
+                <option value="2">Two Year</option>
+            </select><br><br>
+
+            <label for="payment_method">Payment Method:</label><br>
+            <select name="payment_method" id="payment_method">
+                <option value="0">Mailed Check</option>
+                <option value="1" selected>Bank Withdrawal</option>
+                <option value="2">Credit Card</option>
+            </select><br><br>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction is defined %}
+        <h2>Model Prediction: {{ prediction }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
