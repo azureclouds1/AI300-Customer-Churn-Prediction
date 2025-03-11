@@ -2,11 +2,11 @@
 
 ### 1. Project Documentation
 
-| Deployed Flask Web Application on AWS | http://ec2-18-142-245-87.ap-southeast-1.compute.amazonaws.com/ |
+| Deployed Flask Web Application on AWS | https://ai300testapp.azurewebsites.net |
 | -------- | ------- |
 | Docker Hub Image Repository  | https://hub.docker.com/repository/docker/polarisroute/ai300-capstone-app/general |
 
-| API Endpoint | http://ec2-18-142-245-87.ap-southeast-1.compute.amazonaws.com/api/predict |
+| API Endpoint | https://ai300testapp.azurewebsites.net/api/predict |
 | -------- | ------- |
 | JSON Input for POST Request  | ``` {"tenure_months": "12", "num_referrals": "1", "total_long_distance_fee": "0", "total_monthly_fee": "0", "total_charges_quarter": "0", "age": "0", "num_dependents": "1", "has_internet_service": "1", "has_unlimited_data": "1", "has_premium_tech_support": "1", "has_online_security": "1", "paperless_billing": "1", "senior_citizen": "1", "married": "1", "contract_type": "1","payment_method": "1"} ``` |
 
@@ -105,7 +105,7 @@ docker tag <app-name>:1.0 <docker-account-name>/<docker-repository-name>:1.0
 docker push <docker-account-name>/<docker-repository-name>:1.0
 ```
 
-### 5. Instruction guide to setup AWS EC2 and Pull Docker Image
+### 5. Instruction guide to setup AWS EC2 and Pull Docker Image (Optional if deploy on AWS)
 5.1 Setup a instance on AWS EC2 (free-tier) on Amazon Linux
 
 5.2 Connect either on AWS console or SSH to the terminal
